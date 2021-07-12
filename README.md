@@ -1,37 +1,59 @@
-# Backend Node.js <img src="https://www.moovin.com.br/assets/images/svg/logo2.svg" width="50">
+# MOOVIN CHALLENGE
 
-### Desafio
-
-Desenvolver uma solução em formato de API com a utilização de node.js e Typescript.
-
-### Como realizar
-
-Faça o fork do repositório, realize os seus commits e ao final envie o link do seu repositório para o e-mail rh@moovin.com.br. Este repositório já possui uma base para iniciar o desenvolvimento, utilize-a como achar necessário. 
-
-Para iniciar você deve instalar as dependências:
-```zsh
-  foo@bar:~$ npm i
-```
-Em seguida você poderá executar exemplos de utilização do sistema criado através do comando:
-```zsh
-  foo@bar:~$ npm run dev
-```
-
-### Instruções
+## Instruções
 
 Em um pequeno país do planeta Cyber, a moeda vigente é o biteris cuja sigla é B$.
-
 Você precisa desenvolver um algoritmo para um caixa eletrônico, seguindo os requisitos descritos abaixo:
 
-- O banco possui dois tipos de conta: Conta Corrente e Conta Poupança;
-- Limite de Saque: B$ 600,00;
-- Cada operação de Saque possui uma taxa de operação que deve ser descontado do saldo: B$ 0,30;
-- O recurso de Depósito deve receber um código de conta e o valor a ser depositado;
-- O recurso de Saque deve receber um código de conta e o valor a ser retirado além de validar se a conta possui saldo e se o valor não excede o limite;
+    [ X ] O banco possui dois tipos de conta: Conta Corrente e Conta Poupança; (Está sendo diferenciado com isSavings)
 
-> **ATENÇÃO**: Não é necessário realizar interação com banco de dados (opcional).
+    [ X ] Limite de Saque: B$ 600,00;
 
-### Dúvidas
+    [ X ] Cada operação de Saque possui uma taxa de operação que deve ser descontado do saldo: B$ 0,30;
 
-Em caso de dúvida entre em contato pelo skype **matheusmoovin**
+    [ X ] O recurso de Depósito deve receber um código de conta e o valor a ser depositado;
 
+    [ X ] O recurso de Saque deve receber um código de conta e o valor a ser retirado 
+
+    [ X ] Validar se a conta possui saldo e se o valor não excede o limite;
+
+## Extra
+
+Para dificultar ainda mais o desafio e aproveitar meus estudos com postgreSQL e typeORM, adicionei ao projeto banco de dados
+
+    [ x ] Criar conexão com banco de dados;
+
+    [ x ] Migrations;
+
+    [ X ] Repositories;
+
+    [ X ] CRU;
+
+# Rotas
+
+Method: Post -> /createAccount -> Rota para criar conta poupança e corrente.
+    
+    body
+    {
+        "code": 123,
+        "owner": "teste",
+        "isSavings": true (Se verdadeiro, a conta é poupança)
+    }
+
+Method: Post -> /withdraw -> Rota para sacar.
+    
+    body
+    {
+        "code": 123,
+        "valueToWithdraw": 50
+    }
+
+Method: Post -> /deposit -> Rota para depositar.
+    
+    body
+    {
+        "code": 123,
+        "valueToDeposit": 50
+    }
+
+Method: Post -> /checkAccount/:code -> Rota para verificar.
