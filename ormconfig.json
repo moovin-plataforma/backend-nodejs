@@ -1,0 +1,15 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "kruser123",
+    "database": "DB_MVN",
+    "synchronize": false,
+    "migrations": ["src/database/migrations/*.ts"],
+    "entities": ["src/entities/*.ts"],
+    "cli": {
+        "migrationsDir": "src/database/migrations",
+        "entitiesDir": "src/entities"
+    }
+}
