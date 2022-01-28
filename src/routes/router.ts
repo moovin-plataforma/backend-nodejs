@@ -122,7 +122,7 @@ router.patch("/withdraw/:accountNumber", async (req, res) => {
       return;
     }
 
-    let balance = (currentBalance -= value + 0.3);
+    let balance = (json.accounts[index].balance -= value + 0.3);
 
     if (value <= 0) {
       res.status(400).send("Invalid withdraw value!");
@@ -137,7 +137,7 @@ router.patch("/withdraw/:accountNumber", async (req, res) => {
       return;
     }
 
-    currentBalance = balance;
+    json.accounts[index].balance = balance;
 
     await writeFile(globalThis.dbFileName, JSON.stringify(json, null, 2));
 
