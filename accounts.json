@@ -1,0 +1,30 @@
+{
+  "model": "{accountNumber: 1, accountType: 'checking/savings', 'name': 'Fulano', 'balance': 0000}",
+  "nextAccountNumber": 6,
+  "accounts": [
+    {
+      "accountNumber": 2,
+      "accountType": "saving",
+      "name": "Pedro da Silva",
+      "balance": 1000
+    },
+    {
+      "accountNumber": 3,
+      "accountType": "checking",
+      "name": "Maurício Cardoso",
+      "balance": 125.20000000000002
+    },
+    {
+      "accountNumber": 4,
+      "accountType": "checking",
+      "name": "Fabiana Chaves",
+      "balance": 900
+    },
+    {
+      "accountNumber": 5,
+      "accountType": "checking",
+      "name": "Desirè Charlotte",
+      "balance": 1678
+    }
+  ]
+}
